@@ -18,6 +18,7 @@ const Practice_api_1 = () => {
     const [gadgets,setGadgets] = useState([]);
     
     const [flag,setFlag] = useState(false);
+    const [keyFLag,setKeyFlag] = useState(true);
 
 
     const [ans,setAns] = useState("");
@@ -135,6 +136,7 @@ const Practice_api_1 = () => {
      })
 
      setAns(curr);
+     setKeyFlag(false)
 
   }
 
@@ -246,9 +248,11 @@ const Practice_api_1 = () => {
             }
             </ul>
 
-            <button onClick={order}>
-             set orderlist
-            </button>
+            {
+              keyFLag?<button onClick={order}>
+              set orderlist
+             </button>:<></>
+            }
 
             
 
