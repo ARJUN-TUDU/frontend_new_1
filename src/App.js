@@ -2,11 +2,17 @@ import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
 import {useEffect,useState} from 'react';
-import MyMap from './MyMap';
-import Practice_api_1 from './Practice_api_1';
 
 import {BrowserRouter,Link,Routes,Route} from 'react-router-dom'
-import Order from './Order';
+import MyNav from './component/MyNav';
+import Carss from './Blocks/Carss';
+import Home from './pages/Home';
+
+import Menu from './Blocks/Menu';
+import Posts from './pages/Posts';
+import Gallery from './pages/Gallery';
+import Events from './pages/Events';
+
 function App() {
   
  
@@ -15,12 +21,21 @@ function App() {
 
   return (
      <BrowserRouter>
+      
+      <MyNav/>
+      <Carss/>
+      <Menu/>
      
      <Routes>
-
-        <Route path = "/home" element = {<Practice_api_1/>} />
-        <Route path = "/Orders/:items" element = {<Order/>}/>
-
+        
+        <Route path = "/" element = {<Home/>} />
+        <Route path = "/posts" element = {<Posts/>}/>
+        <Route path = "/gallery" element = {<Gallery/>}/>
+        <Route path = "/events" element = {<Events/>}/>
+        
+        
+       
+   
 
 
      </Routes>
